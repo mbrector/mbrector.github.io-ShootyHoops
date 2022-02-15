@@ -50,7 +50,7 @@ console.log(shaq.score)
 
 let myImage = document.querySelector('#playerHoop');
 
-myImage.onclick = function() {
+function kobeShot() {
   let mySrc = myImage.getAttribute('src');                                          //function for player and function for computer tied to button
   if(mySrc === 'images/emptyHoop.jpg' && kobe.madeShot == true) {                      //logic for scoreboard to update
     myImage.setAttribute ('src','images/swish.jpg');                                       //set timeout to go back to emptyHoop
@@ -64,11 +64,11 @@ myImage.onclick = function() {
 
 let myImage2 = document.querySelector('#computerHoop');
 
-myImage2.onclick = function() {
+function shaqShot() {
   let mySrc = myImage2.getAttribute('src');
-  if(mySrc === 'images/emptyHoop.jpg') {
+  if(mySrc === 'images/emptyHoop.jpg' && shaq.madeShot == true) {
     myImage2.setAttribute ('src','images/swish.jpg');
-  } else if(mySrc === 'images/swish.jpg') {
+  } else if(mySrc === 'images/swish.jpg' && shaq.madeShot == false) {
     myImage2.setAttribute ('src','images/doink.jpg')
   }
     else {
