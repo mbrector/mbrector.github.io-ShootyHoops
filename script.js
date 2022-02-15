@@ -46,7 +46,19 @@ myImage.onclick = function() {
     }
 }
 
+let myImage2 = document.querySelector('#computerHoop');
 
+myImage2.onclick = function() {
+  let mySrc = myImage2.getAttribute('src');
+  if(mySrc === 'images/emptyHoop.jpg') {
+    myImage2.setAttribute ('src','images/swish.jpg');
+  } else if(mySrc === 'images/swish.jpg') {
+    myImage2.setAttribute ('src','images/doink.jpg')
+  }
+    else {
+        myImage2.setAttribute ('src','images/emptyHoop.jpg') 
+    }
+}
 
 
 //scoreboard
