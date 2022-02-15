@@ -1,5 +1,6 @@
 body{
     background-image: url(images/backgroundBBallFloor.jpg);
+    background-size: cover;
 }
 
 #game{
@@ -24,4 +25,26 @@ img{
 #start{
     display: block;
     margin: auto;
+}
+
+#shoot{
+    background-image: url(images/ballButton.jpg);
+    background-color: #e0730c;
+    border: 3px;
+    border-color: black;
+    border-style: solid;
+    color: rgb(2, 2, 2);
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%; 
+}
+
+#shoot:hover{
+    background-color: #b15500;
+    background-image: url(images/ballButtonHover.jpg);
 }
