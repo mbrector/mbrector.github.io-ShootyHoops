@@ -19,10 +19,33 @@ class Computer extends Shooter{
     }
 }
 //compare player and computer accuracy vs a Math.random to see if they score
+let kobe = new Player
+let shaq = new Computer
 
+if (kobe.accuracy > Math.random()){
+
+
+}
+
+console.log(kobe.accuracy)
+console.log(shaq.accuracy)
 
 
 //way to generate picture changes to denote a hit or miss
+let myImage = document.querySelector('#playerHoop');
+
+myImage.onclick = function() {
+  let mySrc = myImage.getAttribute('src');
+  if(mySrc === 'images/emptyHoop.jpg') {
+    myImage.setAttribute ('src','images/swish.jpg');
+  } else if(mySrc === 'images/swish.jpg') {
+    myImage.setAttribute ('src','images/doink.jpg')
+  }
+    else {
+        myImage.setAttribute ('src','images/emptyHoop.jpg') 
+    }
+}
+
 
 
 
@@ -36,7 +59,3 @@ class Computer extends Shooter{
 
 //start button
 
-let bob = new Player
-let comp = new Computer
-console.log(bob.accuracy)
-console.log(comp.accuracy)
