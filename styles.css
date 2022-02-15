@@ -1,3 +1,27 @@
 body{
-    background-color: aquamarine;
+    background-image: url(images/backgroundBBallFloor.jpg);
+}
+
+#game{
+    display: grid;
+    grid-template-columns: 45% 5% 45%;
+}
+
+img{
+    margin: auto;
+    display: block;
+}
+
+#buttons{
+    margin: auto;
+}
+
+#reset{
+    display: block;
+    margin: auto;
+}
+
+#start{
+    display: block;
+    margin: auto;
 }
