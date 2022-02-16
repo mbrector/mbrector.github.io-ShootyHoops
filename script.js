@@ -28,12 +28,6 @@ let shaq = new Computer
 document.querySelector('#homeScore').innerHTML = `0${kobe.score}`
 document.querySelector('#visitorScore').innerHTML = `0${shaq.score}`
 
-console.log(kobe.madeShot)
-console.log(shaq.madeShot)
-console.log(kobe.score)
-console.log(shaq.score)
-
-
 //way to generate picture changes to denote a hit or miss
 
 let myImage = document.querySelector('#playerHoop');
@@ -56,6 +50,8 @@ function playerShot() {
     if(kobe.score<10){
         document.querySelector('#homeScore').innerHTML = `0${kobe.score}`
     }
+    
+    
     else{
         document.querySelector('#homeScore').innerHTML = `${kobe.score}` 
     }
@@ -87,10 +83,10 @@ else{
 }
 
 function win(){if(kobe.score>=10 && shaq.score<10){
-    alert("You win!")
+    alert('You win!\nHit "Reset" to play again.')
 }
 else if(shaq.score>=10 && kobe.score<10){
-    alert("You lose!")
+    alert('You lose!\nHit "Reset" to play again.')
 }
 }
 
@@ -121,5 +117,13 @@ function reset(){
 resetGame.addEventListener("click", reset)
 
 
-//start button
+//instruction button
+function instructions(){
+    alert("Welcome to Shooty Hoops!");
+    alert("It is you against the computer in a 1v1!\nFirst to 10 wins!")
+    alert("Press the Shoot button to get started.\nYou will both shoot at the same time.")
+    alert("Your accuracy is randomly generated between 65-75%\nThe computer accuracy is randomly generated between 60-80%")
+}
+var bttn = document.getElementById("instruct");
 
+bttn.addEventListener("click", instructions)
