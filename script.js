@@ -84,13 +84,22 @@ else{
         myImage2.setAttribute ('src','images/emptyHoop.jpg') 
         
     }, 500);
+}
 
+function win(){if(kobe.score>=10 && shaq.score<10){
+    alert("You win!")
+}
+else if(shaq.score>=10 && kobe.score<10){
+    alert("You lose!")
+}
 }
 
 var btn = document.getElementById("shoot");
      
 btn.addEventListener("click", playerShot);
-// btn.addEventListener("click", computerShot);
+btn.addEventListener("click", function(){
+    setTimeout(win, 1000);
+})
 
 
 //scoreboard
