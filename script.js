@@ -25,19 +25,8 @@ class Computer extends Shooter{
 //compare player and computer accuracy vs a Math.random to see if they score
 let kobe = new Player
 let shaq = new Computer
-
-if (kobe.accuracy > Math.random()){
-        kobe.madeShot = true;
-        kobe.score++
-    }
-        else {kobe.madeShot = false
-}
-if (shaq.accuracy > Math.random()){
-        shaq.madeShot = true;
-        shaq.score++
-}
-    else {shaq.madeShot = false
-}
+document.querySelector('#homeScore').innerHTML = `0${kobe.score}`
+document.querySelector('#visitorScore').innerHTML = `0${shaq.score}`
 
 console.log(kobe.madeShot)
 console.log(shaq.madeShot)
@@ -48,42 +37,60 @@ console.log(shaq.score)
 //way to generate picture changes to denote a hit or miss
 
 let myImage = document.querySelector('#playerHoop');
-
-function playerShot() {
-  let mySrc = myImage.getAttribute('src');                                          //function for player and function for computer tied to button
-  if(mySrc === 'images/emptyHoop.jpg' && kobe.madeShot === true) {                      //logic for scoreboard to update
-    myImage.setAttribute ('src','images/swish.jpg');                                       //set timeout to go back to emptyHoop
-  } else if(mySrc === 'images/emptyHoop.jpg' && kobe.madeShot === false) {                  //wait for another click
-    myImage.setAttribute ('src','images/doink.jpg')                                       //
-  }
-    else {
-        myImage.setAttribute ('src','images/emptyHoop.jpg') 
-    }
-}
-
 let myImage2 = document.querySelector('#computerHoop');
 
-function computerShot() {
-  let mySrc = myImage2.getAttribute('src');
-  if(mySrc === 'images/emptyHoop.jpg' && shaq.madeShot === true) {
+function playerShot() {
+  let mySrc1 = myImage.getAttribute('src');
+  if(kobe.score<10 && shaq.score<10){
+      if (kobe.accuracy > Math.random()){
+        kobe.madeShot = true;
+    }
+        else {kobe.madeShot = false
+    }                                                                                            
+    if(mySrc1 === 'images/emptyHoop.jpg' && kobe.madeShot === true) {                      
+        myImage.setAttribute ('src','images/swish.jpg');
+        kobe.score++                                                                            
+    } else if(mySrc1 === 'images/emptyHoop.jpg' && kobe.madeShot === false) {                  
+        myImage.setAttribute ('src','images/doink.jpg')                                      
+    }
+    if(kobe.score<10){
+        document.querySelector('#homeScore').innerHTML = `0${kobe.score}`
+    }
+    else{
+        document.querySelector('#homeScore').innerHTML = `${kobe.score}` 
+    }
+    let mySrc2 = myImage2.getAttribute('src');
+    
+  if (shaq.accuracy > Math.random()){
+    shaq.madeShot = true;
+}
+else {shaq.madeShot = false
+}
+if(mySrc2 === 'images/emptyHoop.jpg' && shaq.madeShot === true) {
     myImage2.setAttribute ('src','images/swish.jpg');
-  } else if(mySrc === 'images/emptyHoop.jpg' && shaq.madeShot === false) {
+    shaq.score++
+  } else if(mySrc2 === 'images/emptyHoop.jpg' && shaq.madeShot === false) {
     myImage2.setAttribute ('src','images/doink.jpg')
   }
-    else {
-        myImage2.setAttribute ('src','images/emptyHoop.jpg') 
-    }
 }
+if(shaq.score<10){
+    document.querySelector('#visitorScore').innerHTML = `0${shaq.score}`
+}
+else{
+    document.querySelector('#visitorScore').innerHTML = `${shaq.score}` 
+}
+     setTimeout(function() {
+        myImage.setAttribute ('src','images/emptyHoop.jpg') 
+        myImage2.setAttribute ('src','images/emptyHoop.jpg') 
+        
+    }, 500);
 
-// document.getElementById('shoot').addEventListener('click', function(){
-//     playerShot();
-//     computerShot();
-// });
+}
 
 var btn = document.getElementById("shoot");
      
 btn.addEventListener("click", playerShot);
-btn.addEventListener("click", computerShot);
+// btn.addEventListener("click", computerShot);
 
 
 //scoreboard
@@ -91,7 +98,18 @@ btn.addEventListener("click", computerShot);
 
 
 //reset button
-
+var resetGame = document.querySelector('#reset')
+function reset(){
+    kobe.score = 0;
+    shaq.score = 0;
+    myImage.setAttribute ('src','images/emptyHoop.jpg');
+    myImage2.setAttribute ('src','images/emptyHoop.jpg');
+    document.querySelector('#homeScore').innerHTML = `0${kobe.score}`;
+    document.querySelector('#visitorScore').innerHTML = `0${shaq.score}`;
+    kobe = new Player;
+    shaq = new Computer;
+}
+resetGame.addEventListener("click", reset)
 
 
 //start button
