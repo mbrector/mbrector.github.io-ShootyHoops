@@ -86,14 +86,17 @@ btn.addEventListener("click", function(){
 })
 
 //win function (takes care of loss and tie also)
+let usName = ""
+let compName = ""
+
 function win(){
     if(kobe.score >= 10 && shaq.score < 10) {
         btn.disabled = true
-        alert('You win!\nHit "Reset" to play again.')
+        alert(`${usName} wins!\nHit "Reset" to play again.`)
     }
     else if(shaq.score >= 10 && kobe.score < 10){
         btn.disabled = true
-        alert('You lose!\nHit "Reset" to play again.')
+        alert(`${compName} wins!\nHit "Reset" to play again.`)
     }
     else if (shaq.score == 10 && kobe.score == 10) {
         btn.disabled = true
@@ -130,7 +133,6 @@ bttn.addEventListener("click", instructions)
 
 //user name input
 function userName() {
-    let usName = ""
     do {
     usName = prompt("Player, please enter your name", "Player");
     }
@@ -140,7 +142,6 @@ function userName() {
 userName();
 
 function computerName() {
-    let compName = ""
     do {
     compName = prompt("Enter a name for the computer or Player 2, remember the stat difference!", "computer");
     }
