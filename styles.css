@@ -56,8 +56,8 @@ button{
 }
 
 button:hover{
-    background-image: url(images/ballButtonHover.jpg);       /*need to work on getting entire button to work*/  
-}
+    background-image: url(images/ballButtonHover.jpg);
+}    
 
 #score{
     position: relative;
