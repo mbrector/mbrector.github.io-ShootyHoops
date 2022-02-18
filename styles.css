@@ -29,6 +29,15 @@ img{
     display: block;
     margin: auto;
 }
+#changeUsersButton{
+    padding: 0px;
+    display: block;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 50rem;
+}
 
 button{
     background-image: url(images/ballButton.jpg);   
@@ -93,3 +102,5 @@ button:hover{
     height: auto;
     width: auto
 }
+
+
