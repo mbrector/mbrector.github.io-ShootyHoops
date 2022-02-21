@@ -114,6 +114,7 @@ function reset(){
     document.querySelector('#visitorScore').innerHTML = `0${shaq.score}`;
     kobe = new Player;
     shaq = new Computer;
+    btn.disabled = false
 }
 
 var resetGame = document.querySelector('#reset')
