@@ -124,9 +124,9 @@ resetGame.addEventListener("click", reset)
 //instruction button(spacing due to centering text within alert box)
 function instructions(){
     alert("                                 Welcome to Shooty Hoops!");
-    alert("                         It is you against the computer in a 1v1!\n                                          First to 10 wins!");
+    alert("              It is you against the computer or a second player in a 1v1!\n                                          First to 10 wins!");
     alert("                         Press the Shoot button to get started.\n                         You will both shoot at the same time.");
-    alert("             Your accuracy is randomly generated between 65-75%\n        The computer accuracy is randomly generated between 60-80%");
+    alert("             Your accuracy is randomly generated between 65-75%\n        The opponent accuracy is randomly generated between 60-80%");
 }
 
 var bttn = document.getElementById("instruct");
